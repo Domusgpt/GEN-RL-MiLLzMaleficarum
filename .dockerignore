@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+README.md
+*.md
+data/current_magazine_data.json # Don't include potentially sensitive current data in the image
