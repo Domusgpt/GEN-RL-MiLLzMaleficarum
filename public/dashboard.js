@@ -1,0 +1,5 @@
+const form=document.getElementById('uploadForm');const fileInput=document.getElementById('magazineDataFile');const statusMessage=document.getElementById('statusMessage');const submitButton=form.querySelector('button[type="submit"]');form.addEventListener('submit',async(event)=>{event.preventDefault();if(!fileInput.files||fileInput.files.length===0){displayMessage('Please select a JSON file.','error');return;}
+const file=fileInput.files[0];const formData=new FormData();formData.append('magazineDataFile',file);displayMessage('Uploading...','');submitButton.disabled=true;try{const response=await fetch('/upload',{method:'POST',body:formData});const result=await response.json();if(response.ok&&result.success){displayMessage(result.message,'success');fileInput.value='';}else{displayMessage(result.message||'Upload failed.','error');}}catch(error){console.error('Upload Error:',error);displayMessage('Network or server error during upload.','error');}finally{submitButton.disabled=false;}});function displayMessage(message,type){statusMessage.textContent=message;statusMessage.className=type;}
+
+
+
