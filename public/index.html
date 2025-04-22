@@ -10,18 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;700&family=VT323&display=swap" rel="stylesheet">
 </head>
-<!-- Body class will be set by JS based on layoutConfiguration.templateName -->
+<!-- Body class will be set by JS based on layoutConfiguration.templateName, defaults to standard-grid -->
 <body>
     <div class="parallax-container">
-        <!-- Parallax Layers -->
+        <!-- Parallax Background Layers -->
         <div class="parallax-layer layer-bg-grid-far"></div>
         <div class="parallax-layer layer-bg-grid-mid"></div>
         <div class="parallax-layer layer-bg-elements">
+             <!-- Floating elements defined in CSS will appear here -->
              <div class="floating-element shape-triangle"></div>
              <div class="floating-element shape-ring"></div>
-             <!-- Add more floating elements if defined in CSS -->
+             <!-- Add more based on your CSS -->
         </div>
 
+        <!-- Main Scrollable Content -->
         <div class="main-content-wrapper">
             <header class="main-header holographic-panel">
                 <h1 class="glitch-text" data-text="GEN-R-L MiLLz">GEN-R-L MiLLz</h1>
@@ -30,11 +32,12 @@
             </header>
 
             <main class="content-grid">
-                <!-- Content modules will be injected here by script.js -->
+                <!-- Loading Indicator Initial State -->
                 <div class="loading-indicator">
                      <p>Establishing Connection... Receiving Transmission...</p>
-                     <!-- Add a loading spinner or animation via CSS if desired -->
+                     <!-- CSS can style this -->
                 </div>
+                <!-- Magazine content modules will be injected here -->
             </main>
 
             <footer class="main-footer">
@@ -43,6 +46,7 @@
             </footer>
         </div>
     </div>
+    <!-- Main Application Script -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,10 +1,11 @@
-/* === GEN-R-L MiLLz Full Styles === */
+/* === GEN-R-L MiLLz Full Styles v0.2 === */
 /* Reset & Base */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--primary-neon:#f0f;--secondary-neon:#0ff;--tertiary-neon:#ff0;--accent-military:#4CAF50;--background-deep:#0d001a;--panel-bg:rgba(20,0,40,0.75);--panel-border:var(--secondary-neon);--panel-glow:rgba(0,255,255,0.5);--text-color:#e0e0e0;--text-highlight:var(--tertiary-neon);--title-color:var(--primary-neon);--grid-color-far:rgba(0,255,255,0.05);--grid-color-mid:rgba(255,0,255,0.1);--glitch-intensity:4px;--glitch-slice-max:15px;--glitch-chance:0.8;--scanline-opacity:0.08;--scanline-intensity:2px;--float-speed:20s;--float-intensity:15px;--entrance-delay:0.15s;--holographic-opacity:0.75;--parallax-perspective:15px;--parallax-z-far:-50px;--parallax-z-mid:-30px;--parallax-z-elements:-10px}
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'Rajdhani',sans-serif;background-color:var(--background-deep);color:var(--text-color);line-height:1.6;overflow-x:hidden;perspective:var(--parallax-perspective);min-height:100vh;overflow-y:scroll; /* Ensure scroll always possible */}
-.no-js body{overflow:auto}
+body{font-family:'Rajdhani',sans-serif;background-color:var(--background-deep);color:var(--text-color);line-height:1.6;overflow-x:hidden;perspective:var(--parallax-perspective);min-height:100vh;overflow-y:scroll}
+.no-js body{overflow:auto} /* Fallback */
+.js-loading body { /* Optional: style while JS loading */ }
 h1,h2,h3,h4,h5,h6{font-family:'Orbitron',sans-serif;text-transform:uppercase;margin-bottom:1rem;letter-spacing:.1em}
 h1{font-size:clamp(2.5rem,6vw,4.5rem);color:var(--title-color);font-weight:900; text-shadow: 0 0 5px var(--primary-neon), 0 0 10px var(--primary-neon), 0 0 15px #000;}
 h2.section-title{font-size:clamp(1.2rem,3vw,1.8rem);color:var(--secondary-neon);border-bottom:1px solid var(--secondary-neon);padding-bottom:.5rem;margin-bottom:1.5rem;display:inline-block; text-shadow: 0 0 3px var(--secondary-neon);}
@@ -20,9 +21,11 @@ h2.section-title{font-size:clamp(1.2rem,3vw,1.8rem);color:var(--secondary-neon);
 .layer-bg-grid-mid{background-image:linear-gradient(var(--grid-color-mid) 1px,transparent 1px),linear-gradient(90deg,var(--grid-color-mid) 1px,transparent 1px);background-size:50px 50px;transform:translateZ(var(--parallax-z-mid)) scale(calc(1 + (var(--parallax-z-mid) * -1 / var(--parallax-perspective))));z-index:2;mix-blend-mode:screen}
 .layer-bg-elements{transform:translateZ(var(--parallax-z-elements)) scale(calc(1 + (var(--parallax-z-elements) * -1 / var(--parallax-perspective))));z-index:3}
 .main-content-wrapper{position:relative;z-index:10;padding:2rem clamp(1rem,5vw,4rem);max-width:1200px;margin:0 auto}
-.content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:2rem;margin-top:3rem;min-height: 200px;}
-.content-module{margin-bottom:2rem;transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease,opacity .4s ease; background: rgba(0,0,0,0.1); border: 1px solid transparent; /* Base border for transition */}
-.small-module{/* Styles for small modules if needed, maybe affects grid span */}
+.content-grid{display:grid;gap:2rem;margin-top:3rem;min-height: 200px;}
+/* Default Layout */
+body.standard-grid .content-grid { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));}
+.content-module{margin-bottom:2rem;transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease,opacity .4s ease; background: rgba(13,0,26,0.2); border: 1px solid transparent;}
+.small-module{/* Maybe use grid-column: span 1; if inside a multi-column grid */}
 .holographic-panel{background-color:var(--panel-bg);border:1px solid var(--panel-border);padding:1.5rem;position:relative;box-shadow:0 0 15px 3px var(--panel-glow),inset 0 0 10px 2px var(--panel-glow);opacity:var(--holographic-opacity);transition:opacity .5s ease, border-color .3s, box-shadow .3s}
 .holographic-panel:hover{opacity:.95; border-color: var(--text-highlight);}
 .panel-corner{position:absolute;width:10px;height:10px;border-style:solid;border-color:var(--panel-border);transition: border-color .3s;}
@@ -55,9 +58,9 @@ h2.section-title{font-size:clamp(1.2rem,3vw,1.8rem);color:var(--secondary-neon);
 /* Responsive */
 @media (max-width:768px){.main-content-wrapper{padding:1.5rem clamp(.5rem,3vw,1.5rem)}.content-grid{gap:1.5rem}.holographic-panel{padding:1rem}}
 .error-message{color:red;font-weight:700;text-align:center;margin-top:40px;font-family:'VT323',monospace;font-size:1.3rem; padding: 2rem; border: 1px dashed red;}
-/* Add specific styles for layout templates if needed */
-body.standard-grid .content-grid { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));}
+/* Layout Template Examples */
 body.focus-center .content-grid { display: flex; flex-direction: column; align-items: center;}
-body.focus-center .content-module.has-visual-focus { order: -1; width: 80%; max-width: 800px; /* Center focus */}
-body.split-view .content-grid { grid-template-columns: repeat(auto-fit, minmax(min(45%, 300px), 1fr));} /* Example split */
-
+body.focus-center .content-module { width: 90%; max-width: 900px; } /* Adjust width for centered items */
+body.focus-center .content-module.has-visual-focus { order: -1; width: 95%; max-width: 1000px; margin-bottom: 2.5rem; } /* Make focus item slightly larger and first */
+body.split-view .content-grid { grid-template-columns: repeat(auto-fit, minmax(min(48%, 300px), 1fr));} /* Better split */
+/* Add more layout template CSS rules as needed */
