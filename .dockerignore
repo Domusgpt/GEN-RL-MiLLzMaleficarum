@@ -4,11 +4,5 @@ Dockerfile
 .dockerignore
 .git
 .gitignore
-<<<<<<< HEAD
+data/
 *.md
-data/current_magazine_data.json
-=======
-README.md
-*.md
-data/current_magazine_data.json # Don't include potentially sensitive current data in the image
->>>>>>> origin/main

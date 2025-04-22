@@ -1,5 +1,34 @@
-<<<<<<< HEAD
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MiLLz Update</title><style>body{font-family:sans-serif;background-color:#1a1a1a;color:#e0e0e0;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;}.container{background-color:#2a2a2a;padding:30px 40px;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.4);text-align:center;max-width:500px;width:90%;}h1{color:#ff00ff;margin-bottom:25px;text-transform:uppercase;letter-spacing:2px;font-size:1.5em;}label{display:block;margin-bottom:10px;font-weight:bold;color:#00ffff;}input[type="file"]{display:block;width:calc(100% - 22px);margin:0 auto 20px auto;padding:10px;border:1px dashed #ccc;border-radius:4px;cursor:pointer;background:#333;}button{background:linear-gradient(to right, #ff00ff, #00ffff);color:#111;border:none;padding:12px 25px;border-radius:5px;font-size:1em;font-weight:bold;text-transform:uppercase;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;width:100%;}button:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0, 255, 255, 0.3);}button:active{transform:translateY(0px);box-shadow:0 3px 6px rgba(0, 255, 255, 0.2);}#statusMessage{margin-top:20px;font-weight:bold;min-height:1.2em;word-wrap:break-word;}.success{color:#55ff55;} .error{color:#ff5555;}</style></head><body><div class="container"><h1>Magazine Data Upload</h1><form id="uploadForm" enctype="multipart/form-data"><label for="magazineDataFile">Select Daily JSON File:</label><input type="file" id="magazineDataFile" name="magazineDataFile" accept=".json" required><button type="submit">Upload & Update</button></form><p id="statusMessage"></p></div><script src="dashboard.js"></script></body></html>
-=======
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GEN-R-L MiLLz - Update Dashboard</title><style>body{font-family:sans-serif;background-color:#1a1a1a;color:#e0e0e0;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;}.container{background-color:#2a2a2a;padding:30px 40px;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.4);text-align:center;max-width:500px;width:90%;}h1{color:#ff00ff;margin-bottom:25px;text-transform:uppercase;letter-spacing:2px;font-size:1.5em;}label{display:block;margin-bottom:10px;font-weight:bold;color:#00ffff;}input[type="file"]{display:block;width:calc(100% - 22px);margin:0 auto 20px auto;padding:10px;border:1px dashed #ccc;border-radius:4px;cursor:pointer;background:#333;}button{background:linear-gradient(to right, #ff00ff, #00ffff);color:#111;border:none;padding:12px 25px;border-radius:5px;font-size:1em;font-weight:bold;text-transform:uppercase;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;width:100%;}button:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0, 255, 255, 0.3);}button:active{transform:translateY(0px);box-shadow:0 3px 6px rgba(0, 255, 255, 0.2);}#statusMessage{margin-top:20px;font-weight:bold;min-height:1.2em;word-wrap:break-word;}.success{color:#55ff55;} .error{color:#ff5555;}</style></head><body><div class="container"><h1>Magazine Data Upload</h1><form id="uploadForm" enctype="multipart/form-data"><label for="magazineDataFile">Select Daily JSON File:</label><input type="file" id="magazineDataFile" name="magazineDataFile" accept=".json" required><button type="submit">Upload & Update</button></form><p id="statusMessage"></p></div><script src="dashboard.js"></script></body></html>
->>>>>>> origin/main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEN-R-L MiLLz - Update Dashboard</title>
+    <style>
+        body{font-family:monospace;background-color:#0d001a;color:#e0e0e0;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:15px;}
+        .container{background-color:#1a0033;border:1px solid #ff00ff;padding:30px 40px;border-radius:8px;box-shadow:0 0 25px rgba(255,0,255,.3);text-align:center;max-width:550px;width:100%;}
+        h1{color:#ff00ff;margin-bottom:25px;text-transform:uppercase;letter-spacing:2px;font-size:1.6em; font-family: 'Orbitron', sans-serif;}
+        label{display:block;margin-bottom:10px;font-weight:bold;color:#00ffff;font-size: 1.1em;}
+        input[type="file"]{display:block;width:calc(100% - 24px);margin:10px auto 25px auto;padding:12px;border:1px dashed #00ffff;border-radius:4px;cursor:pointer;background:#100020;color:#e0e0e0; font-family: monospace;}
+        input[type="file"]::file-selector-button { background-color: #ff00ff; color: #0d001a; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 10px; font-weight: bold;}
+        button{background:linear-gradient(to right, #ff00ff, #00ffff);color:#0d001a;border:none;padding:12px 25px;border-radius:5px;font-size:1.1em;font-weight:bold;text-transform:uppercase;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;width:100%; font-family: 'Orbitron', sans-serif;}
+        button:hover:enabled{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0, 255, 255, 0.4);}
+        button:active:enabled{transform:translateY(0px);box-shadow:0 3px 6px rgba(0, 255, 255, 0.3);}
+        button:disabled { background: #555; cursor: not-allowed; opacity: 0.6;}
+        #statusMessage{margin-top:25px;font-weight:bold;min-height:1.5em;word-wrap:break-word;font-size:1.1em; line-height: 1.4;}
+        .success{color:#55ff55; text-shadow: 0 0 5px #55ff55;} .error{color:#ff5555; text-shadow: 0 0 5px #ff5555;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>// UPLOAD DAILY TRANSMISSION //</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="magazineDataFile">Select Cycle JSON File:</label>
+            <input type="file" id="magazineDataFile" name="magazineDataFile" accept=".json,application/json" required>
+            <button type="submit">Initiate Update Protocol</button>
+        </form>
+        <p id="statusMessage">> System Standby: Awaiting JSON input...</p>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
